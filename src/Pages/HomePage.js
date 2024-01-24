@@ -30,7 +30,7 @@ function HomePage() {
                 <CreateNewListForm />
                 <SearchLists />
             </div>
-            <div className='home-page-heading-hr mb-3'>
+            <div className='home-page-heading-hr mb-8'>
                 <hr />
             </div>
             <TodoLists />

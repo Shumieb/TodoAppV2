@@ -3,7 +3,7 @@ import React from 'react'
 function CreateNewListForm() {
     return (
         <div className='m-1 px-3'>
-            <form className='my-1 mx-auto py-4 px-3 bg-darkTeal w-1/2 rounded-lg'>
+            <form className='my-1 mx-auto mb-8 py-4 px-3 bg-darkTeal w-1/2 rounded-lg'>
                 <p className='p-2 mb-1 text-2xl text-lightSlate'>Create New List</p>
                 <div className='mb-7 lighter-hr'>
                     <hr />
@@ -16,7 +16,7 @@ function CreateNewListForm() {
                     autoComplete='off'
                     className='block mx-auto mb-1 px-2 py-1 text-lg bg-darkTeal 
                                 text-lightSlate outline-none border-4 border-darkTeal 
-                                border-b-lightSlate focus:bg-darkTeal active:bg-darkTeal'
+                                border-b-lightSlate'
                 />
                 <p className='p-2 mb-8 text-lightRed'>Todo List Already exists.</p>
                 <input
