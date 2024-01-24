@@ -28,7 +28,7 @@ function NavBar() {
                     />
                 </li>
                 <li className='px-2 mx-1 text-lg hover:text-lighterTeal'>
-                    <p className='text-lightSlate hover:text-lighterTeal'>Avatar</p>
+                    <p className='text-lightSlate cursor-pointer hover:text-lighterTeal'>Avatar</p>
                 </li>
             </ul>
         </nav>
