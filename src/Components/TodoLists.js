@@ -1,14 +1,19 @@
 import React from 'react'
 import TodoListCard from './TodoListCard'
 
-function TodoLists({ displayEditListForm }) {
+function TodoLists({ displayEditListForm, todoList }) {
+
+    //console.log(todoList);
+
+    const listItems = todoList.map(list => {
+        //console.log(list);
+        return <TodoListCard key={list.id} displayEditListForm={displayEditListForm} list={list} />
+    })
+
     return (
-        <div className='p-2 grid grid-cols-2 gap-4 mx-auto w-3/4 mb-10'>
-            <TodoListCard displayEditListForm={displayEditListForm} />
-            <TodoListCard displayEditListForm={displayEditListForm} />
-            <TodoListCard displayEditListForm={displayEditListForm} />
-            <TodoListCard displayEditListForm={displayEditListForm} />
-        </div>
+        <ul className='p-2 grid grid-cols-2 gap-2 mx-auto mb-10'>
+            {listItems}
+        </ul>
     )
 }
 

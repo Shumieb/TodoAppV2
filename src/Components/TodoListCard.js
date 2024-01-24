@@ -1,15 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function TodoListCard({ displayEditListForm }) {
+function TodoListCard({ displayEditListForm, list }) {
+    //console.log(list);
     return (
-        <div className='bg-darkTeal mx-auto py-3 px-6 text-lg text-lightSlate rounded-lg min-w-60'>
-            <p className='mb-1'>Todo List One</p>
+        <div className='bg-darkTeal mx-auto py-3 px-6 text-lg text-lightSlate rounded-lg min-w-96'>
+            <p className='mb-2'>{list.name}</p>
             <p className='text-base italic'>Created: </p>
             <p className='text-base italic mb-4'>Number of List Items:  </p>
             <div className='mb-5'>
                 <Link
-                    to="/todolist/1"
+                    to={`/todolist/${list.id}`}
                     className='mx-auto ml-3 py-2 px-6 cursor-pointer bg-lightSlate 
                 rounded-md text-base text-darkTeal hover:bg-lighterTeal'
                 >View List</Link>
@@ -18,7 +19,7 @@ function TodoListCard({ displayEditListForm }) {
                 <input
                     type='button'
                     value="Edit Name"
-                    onClick={() => displayEditListForm("Todo List One")}
+                    onClick={() => displayEditListForm(list.name)}
                     className='mx-auto ml-3 py-1 px-2 cursor-pointer bg-darkLime 
                             rounded-md text-base text-lightSlate hover:text-lighterTeal'
                 />

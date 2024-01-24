@@ -12,6 +12,8 @@ function HomePage() {
     const [showSearchListsForm, setShowSearchListsForm] = useState(false);
     const [showEditListForm, setShowEditListForm] = useState(false);
 
+    const [todoList, setTodoList] = useState([{ id: 1, name: "Todo List One" }, { id: 2, name: "Todo List Two" }]);
+
     const displayCreateNewListForm = () => {
         //console.log("display create new list form");
         showCreateNewListForm ? setShowCreateNewListForm(false) : setShowCreateNewListForm(true);
@@ -72,6 +74,7 @@ function HomePage() {
                 <hr />
             </div>
             <TodoLists
+                todoList={todoList}
                 displayEditListForm={displayEditListForm}
             />
         </div>
