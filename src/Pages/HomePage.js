@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from "react"
-
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 import TodoLists from '../Components/TodoLists'
 import CreateNewListForm from '../Components/CreateNewListForm'
@@ -44,9 +43,9 @@ function HomePage() {
     };
 
     const addNewListToList = (listName) => {
-        let newListId = uuidv4();
-        let newList = { id: newListId, name: listName };
-        setTodoList((prevState) => [...prevState, newList]);
+        let newListId = uuidv4()
+        let newList = { id: newListId, name: listName }
+        setTodoList((prevState) => [...prevState, newList])
     }
 
     return (

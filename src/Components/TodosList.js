@@ -1,15 +1,16 @@
 import React from 'react'
 import TodoCard from './TodoCard'
 
-function TodosList({ displayEditTodoForm }) {
+function TodosList({ displayEditTodoForm, todos }) {
+
+    const listItems = todos.map(listItem => {
+        return <TodoCard key={listItem.id} displayEditTodoForm={displayEditTodoForm} todo={listItem} />
+    })
+
     return (
-        <div className='p-4 mx-auto w-3/4 mb-6'>
-            <TodoCard displayEditTodoForm={displayEditTodoForm} />
-            <TodoCard displayEditTodoForm={displayEditTodoForm} />
-            <TodoCard displayEditTodoForm={displayEditTodoForm} />
-            <TodoCard displayEditTodoForm={displayEditTodoForm} />
-            <TodoCard displayEditTodoForm={displayEditTodoForm} />
-        </div>
+        <ul className='p-4 mx-auto w-3/4 mb-6'>
+            {listItems}
+        </ul>
     )
 }
 

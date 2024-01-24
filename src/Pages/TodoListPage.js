@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from "react"
+import { v4 as uuidv4 } from 'uuid'
 
 import TodosList from '../Components/TodosList'
 import AddNewTodoForm from '../Components/AddNewTodoForm'
@@ -11,6 +12,8 @@ function TodoListPage() {
     const [showAddNewTodoForm, setShowAddNewTodoForm] = useState(false);
     const [showSearchTodoForm, setSearchTodoForm] = useState(false);
     const [showEditTodoForm, setShowEditTodoForm] = useState(false);
+
+    const [todos, setTodos] = useState([{ id: 1, name: "Buy Milk" }, { id: 2, name: "Buy Sugar" }]);
 
     const displayAddNewTodoForm = () => {
         showAddNewTodoForm ? setShowAddNewTodoForm(false) : setShowAddNewTodoForm(true);
@@ -34,6 +37,12 @@ function TodoListPage() {
             setShowAddNewTodoForm(false);
             setSearchTodoForm(false);
         }
+    }
+
+    const addNewTodoToList = (todoName) => {
+        let newTodoId = uuidv4();
+        let newTodo = { id: newTodoId, name: todoName };
+        setTodos((prevState) => [newTodo, ...prevState]);
     }
 
     return (
@@ -62,7 +71,7 @@ function TodoListPage() {
                 />
             </div>
             <div>
-                {showAddNewTodoForm ? <AddNewTodoForm /> : null}
+                {showAddNewTodoForm ? <AddNewTodoForm addNewTodoToList={addNewTodoToList} /> : null}
                 {showSearchTodoForm ? <SearchTodoForm /> : null}
                 {showEditTodoForm ? <EditTodoForm /> : null}
             </div>
@@ -85,7 +94,7 @@ function TodoListPage() {
                                 bg-lightRose text-lg hover:text-lighterFuscia'
                 />
             </div>
-            <TodosList displayEditTodoForm={displayEditTodoForm} />
+            <TodosList displayEditTodoForm={displayEditTodoForm} todos={todos} />
         </div>
     )
 }

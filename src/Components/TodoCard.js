@@ -1,9 +1,9 @@
 import React from 'react'
 import Checkbox from 'react-custom-checkbox'
 
-function TodoCard({ displayEditTodoForm }) {
+function TodoCard({ displayEditTodoForm, todo }) {
     return (
-        <div className='bg-darkTeal rounded-lg flex flex-row justify-between align-center py-2 px-4 my-6 text-lightSlate text-lg'>
+        <li className='bg-darkTeal rounded-lg flex flex-row justify-between align-center py-2 px-4 my-6 text-lightSlate text-lg'>
             <div className='flex flex-row justify-start align-center py-2'>
                 <Checkbox
                     icon={
@@ -17,12 +17,11 @@ function TodoCard({ displayEditTodoForm }) {
                         >
                         </div>}
                     name="completeTodo"
-                    id="completeTodo"
                     className='cursor-pointer'
                     borderColor="#f8fafc"
                     checked={false}
                 />
-                <p className='px-2'>Todo one</p>
+                <p className='px-2'>{todo.name}</p>
                 <p className='italic pl-3 text-lighterTeal text-sm pt-1'>Completed - </p>
             </div>
             <div className='flex flex-row justify-end align-center'>
@@ -36,13 +35,13 @@ function TodoCard({ displayEditTodoForm }) {
                 <input
                     type="button"
                     value="Edit"
-                    onClick={() => displayEditTodoForm("Todo One")}
+                    onClick={() => displayEditTodoForm(todo.name)}
                     className='cursor-pointer px-2 py-1 mx-3 rounded-lg 
                                 border-4 border-darkLime text-lightSlate 
                                 bg-darkLime text-lg hover:text-lighterFuscia'
                 />
             </div>
-        </div>
+        </li>
     )
 }
 
