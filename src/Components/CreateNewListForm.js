@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react"
 
-function CreateNewListForm() {
+function CreateNewListForm({ addNewListToList }) {
 
     const [newTodoListName, setNewTodoListName] = useState("");
     const [displayErrorMsg, setDisplayErrorMsg] = useState(false);
@@ -9,8 +9,9 @@ function CreateNewListForm() {
 
     const addNewTodoList = (e) => {
         e.preventDefault();
-        if (newTodoListName != "") {
-            console.log(newTodoListName);
+        if (newTodoListName !== "") {
+            //console.log(newTodoListName);
+            addNewListToList(newTodoListName);
             setNewTodoListName("");
         } else {
             setDisplayErrorMsg(true);

@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from "react"
 
+import { v4 as uuidv4 } from 'uuid';
+
 import TodoLists from '../Components/TodoLists'
 import CreateNewListForm from '../Components/CreateNewListForm'
 import SearchLists from '../Components/SearchLists'
@@ -41,6 +43,12 @@ function HomePage() {
         }
     };
 
+    const addNewListToList = (listName) => {
+        let newListId = uuidv4();
+        let newList = { id: newListId, name: listName };
+        setTodoList((prevState) => [...prevState, newList]);
+    }
+
     return (
         <div className="container mx-auto text-center">
             <h2 className='p-2 mb-1 text-3xl text-darkTeal'>Todo App</h2>
@@ -66,7 +74,7 @@ function HomePage() {
                 />
             </div>
             <div>
-                {showCreateNewListForm ? <CreateNewListForm /> : null}
+                {showCreateNewListForm ? <CreateNewListForm addNewListToList={addNewListToList} /> : null}
                 {showSearchListsForm ? <SearchLists /> : null}
                 {showEditListForm ? <EditListForm /> : null}
             </div>

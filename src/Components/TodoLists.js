@@ -3,11 +3,9 @@ import TodoListCard from './TodoListCard'
 
 function TodoLists({ displayEditListForm, todoList }) {
 
-    //console.log(todoList);
-
-    const listItems = todoList.map(list => {
+    const listItems = todoList.map(listItem => {
         //console.log(list);
-        return <TodoListCard key={list.id} displayEditListForm={displayEditListForm} list={list} />
+        return <TodoListCard key={listItem.id} displayEditListForm={displayEditListForm} listItem={listItem} />
     })
 
     return (
