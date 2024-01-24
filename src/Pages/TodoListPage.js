@@ -33,10 +33,24 @@ function TodoListPage() {
                 <SearchTodoForm />
                 <EditTodoForm />
             </div>
-            <hr />
-            <div>
-                <input type="button" value="Hide Completed" />
-                <input type="button" value="Sort" />
+            <div className='home-page-heading-hr mb-8'>
+                <hr />
+            </div>
+            <div className='mx-1 px-1'>
+                <input
+                    type="button"
+                    value="Hide Completed"
+                    className='cursor-pointer px-2 py-1 mx-3 rounded-lg 
+                                border-4 border-lightRose text-lightSlate 
+                                bg-lightRose text-lg hover:text-lighterFuscia'
+                />
+                <input
+                    type="button"
+                    value="Sort A-Z"
+                    className='cursor-pointer px-8 py-1 mx-3 rounded-lg 
+                                border-4 border-lightRose text-lightSlate 
+                                bg-lightRose text-lg hover:text-lighterFuscia'
+                />
             </div>
             <TodosList />
         </div>
