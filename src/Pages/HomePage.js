@@ -2,6 +2,7 @@ import React from 'react'
 import TodoLists from '../Components/TodoLists'
 import CreateNewListForm from '../Components/CreateNewListForm'
 import SearchLists from '../Components/SearchLists'
+import EditListForm from '../Components/EditListForm'
 
 function HomePage() {
     return (
@@ -29,6 +30,7 @@ function HomePage() {
             <div>
                 <CreateNewListForm />
                 <SearchLists />
+                <EditListForm />
             </div>
             <div className='home-page-heading-hr mb-4'>
                 <hr />

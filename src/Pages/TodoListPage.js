@@ -6,13 +6,27 @@ import EditTodoForm from '../Components/EditTodoForm'
 
 function TodoListPage() {
     return (
-        <div>
-            <p>Todo List One</p>
-            <hr />
-            <p>Created: </p>
-            <div>
-                <input type="button" value="addNewTodo" />
-                <input type="button" value="searchTodos" />
+        <div className='container p-2 my-3 text-center'>
+            <p className='p-2 mb-1 text-3xl text-darkTeal'>Todo List One</p>
+            <div className='home-page-heading-hr mb-1'>
+                <hr />
+            </div>
+            <p className='p-2 text-lg text-darkTeal italic mb-5'>Created: </p>
+            <div className='mx-1 px-1 mb-7'>
+                <input
+                    type="button"
+                    value="Add New Todo"
+                    className='cursor-pointer px-2 py-1 mx-3 rounded-lg 
+                                border-4 border-darkFuscia text-lightSlate 
+                                bg-darkFuscia text-lg hover:text-lighterFuscia'
+                />
+                <input
+                    type="button"
+                    value="Search Todos"
+                    className='cursor-pointer px-2 py-1 mx-3 rounded-lg 
+                                border-4 border-darkFuscia text-lightSlate 
+                                bg-darkFuscia text-lg hover:text-lighterFuscia'
+                />
             </div>
             <div>
                 <AddNewTodoForm />

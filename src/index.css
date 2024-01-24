@@ -31,3 +31,15 @@ li {
   margin: auto;
   border: 2px solid #f8fafc;
 }
+
+.lighter-hr-med hr {
+  width: 120px;
+  margin: auto;
+  border: 2px solid #f8fafc;
+}
+
+.lighter-hr-shorter hr {
+  width: 85px;
+  margin: auto;
+  border: 2px solid #f8fafc;
+}
