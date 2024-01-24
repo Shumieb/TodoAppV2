@@ -19,3 +19,15 @@ code {
 li {
   list-style: none;
 }
+
+.home-page-heading-hr hr {
+  width: 160px;
+  margin: auto;
+  border: 2px solid #134e4a;
+}
+
+.lighter-hr hr {
+  width: 140px;
+  margin: auto;
+  border: 2px solid #f8fafc;
+}
