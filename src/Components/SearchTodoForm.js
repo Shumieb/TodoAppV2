@@ -3,7 +3,7 @@ import React from 'react'
 function SearchTodoForm() {
     return (
         <div className='m-1 px-3'>
-            <form className='my-1 mx-auto py-5 px-3 bg-darkTeal w-1/2 rounded-lg mb-8'>
+            <form className='my-1 mx-auto py-5 px-3 bg-darkTeal w-3/4 rounded-lg mb-8'>
                 <input
                     type="text"
                     name="searchTodo"

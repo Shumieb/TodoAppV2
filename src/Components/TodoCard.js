@@ -1,7 +1,7 @@
 import React from 'react'
 import Checkbox from 'react-custom-checkbox'
 
-function TodoCard() {
+function TodoCard({ displayEditTodoForm }) {
     return (
         <div className='bg-darkTeal rounded-lg flex flex-row justify-between align-center py-2 px-4 my-6 text-lightSlate text-lg'>
             <div className='flex flex-row justify-start align-center py-2'>
@@ -36,6 +36,7 @@ function TodoCard() {
                 <input
                     type="button"
                     value="Edit"
+                    onClick={() => displayEditTodoForm("Todo One")}
                     className='cursor-pointer px-2 py-1 mx-3 rounded-lg 
                                 border-4 border-darkLime text-lightSlate 
                                 bg-darkLime text-lg hover:text-lighterFuscia'
