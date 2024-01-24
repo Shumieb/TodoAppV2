@@ -5,7 +5,7 @@ import SearchLists from '../Components/SearchLists'
 
 function HomePage() {
     return (
-        <div>
+        <div className="container mx-auto">
             <h2>Todo App</h2>
             <hr />
             <div>
