@@ -3,9 +3,9 @@ import { useState } from "react"
 
 function CreateNewListForm({ addNewListToList }) {
 
-    const [newTodoListName, setNewTodoListName] = useState("");
-    const [displayErrorMsg, setDisplayErrorMsg] = useState(false);
-    const [errorMsg, setErrorMsg] = useState("");
+    const [newTodoListName, setNewTodoListName] = useState("")
+    const [displayErrorMsg, setDisplayErrorMsg] = useState(false)
+    const [errorMsg, setErrorMsg] = useState("")
 
     const addNewTodoList = (e) => {
         e.preventDefault();

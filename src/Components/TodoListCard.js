@@ -19,7 +19,7 @@ function TodoListCard({ displayEditListForm, listItem }) {
                 <input
                     type='button'
                     value="Edit Name"
-                    onClick={() => displayEditListForm(listItem.name)}
+                    onClick={() => displayEditListForm(listItem)}
                     className='mx-auto ml-3 py-1 px-2 cursor-pointer bg-darkLime 
                             rounded-md text-base text-lightSlate hover:text-lighterTeal'
                 />

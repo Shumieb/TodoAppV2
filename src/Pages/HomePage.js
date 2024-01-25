@@ -12,6 +12,7 @@ function HomePage() {
     const [showCreateNewListForm, setShowCreateNewListForm] = useState(false);
     const [showSearchListsForm, setShowSearchListsForm] = useState(false);
     const [showEditListForm, setShowEditListForm] = useState(false);
+    const [listToEdit, setListToEdit] = useState("")
 
     const [todoList, setTodoList] = useState([{ id: 1, name: "Todo List One" }, { id: 2, name: "Todo List Two" }]);
 
@@ -33,9 +34,17 @@ function HomePage() {
         }
     };
 
-    const displayEditListForm = (listName) => {
+    const displayEditListForm = (list) => {
         //console.log("display edit list form");
-        showEditListForm ? setShowEditListForm(false) : setShowEditListForm(true);
+        //console.log(listName)
+        if (showEditListForm) {
+            setListToEdit("")
+            setShowEditListForm(false)
+        } else {
+            setListToEdit(list)
+            setShowEditListForm(true)
+        }
+
         if (showCreateNewListForm || showSearchListsForm) {
             setShowCreateNewListForm(false);
             setShowSearchListsForm(false);
@@ -46,6 +55,14 @@ function HomePage() {
         let newListId = uuidv4()
         let newList = { id: newListId, name: listName }
         setTodoList((prevState) => [...prevState, newList])
+    }
+
+    const editListNameInList = (listToEdit) => {
+        console.log(listToEdit);
+        let listToeditIndex = todoList.findIndex((list) => list.id == listToEdit.id)
+        let newTodos = [...todoList]
+        newTodos[listToeditIndex] = listToEdit
+        setTodoList(newTodos)
     }
 
     return (
@@ -75,7 +92,9 @@ function HomePage() {
             <div>
                 {showCreateNewListForm ? <CreateNewListForm addNewListToList={addNewListToList} /> : null}
                 {showSearchListsForm ? <SearchLists /> : null}
-                {showEditListForm ? <EditListForm /> : null}
+                {showEditListForm ?
+                    <EditListForm listToEdit={listToEdit} editListNameInList={editListNameInList} />
+                    : null}
             </div>
             <div className='home-page-heading-hr mb-4'>
                 <hr />
